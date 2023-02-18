@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <!-- <li><img src="image/A2.png" width="40" height="40" alt=""></li> -->
+                    <li><a href="Admin.html" class="nav-link px-2 link-dark">หน้าหลัก</a></li>
+                    <li><a href="#" class="nav-link px-2 link-secondary">เพิ่มกิจกรรม</a></li>
+                    <li><a href="index.html" class="nav-link px-2 link-danger">ออกจากระบบ</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control" placeholder="เข้าร่วมกิจกรรม..." aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <main>
+                <div class="row g-2">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 col-lg-6">
+                        <div>
+                            <a href="index.html">
+                                <h3 class="bi-x-lg text-danger" type="button"></h3>
+                            </a>
+                        </div>
+                        <h4 class=" py-3 text-center"><i class="bi-person-plus"> </i> เพิ่มกิจกรรม</h4>
+                        <form class="needs-validation" novalidate="">
+                            <div class="row g-3">
+                                
+                                <div class="col-6">
+                                    <label for="EventID" class="form-label">รหัสกิจกรรม</label>
+                                    <input type="text" class="form-control" id="EventID" maxLength="10" placeholder="XXXXXXXXXX" required="">
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping Student ID.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label for="hour" class="form-label">จำนวนชั่วโมง</label>
+                                    <input type="number" class="form-control" id="hour" placeholder="" value=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <label for="people" class="form-label">จำนวนที่รับ</label>
+                                    <input type="number" class="form-control" id="people" maxLength="4">
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <label for="EName" class="form-label">ชื่อกิจกรรม</label>
+                                    <input type="text" class="form-control" id="EName" placeholder="กรุณากรอกชื่อกิจกรรม"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+    
+    
+                                <div class="col-12">
+                                    <label for="typing">ประเภทกิจกรรม</label>
+                                    <select class="form-control form-control-lg form-select" name="typing" id="typing"
+                                        onchange="ChangecatList()" required>
+                                        <option value="">กรุณาเลือก... </option>
+                                        <option value="สาขา">สาขา</option>
+                                        <option value="คณะ">คณะ</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a type.
+                                    </div>
+                                </div>
+    
+    
+                                <a class="w-100 btn btn-primary btn-lg" id="AddData" onclick="AddRow()">ยืนยัน</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+        </main>
+
+    </main>
+    <div class="container mt-3 column col-md-6 col-lg-12 text-center">
+        
+        <div id="demo"></div>
+    </div>
+        <script>
+            let demo = document.getElementById("demo");
+            const person = [
+                
+            ];
+            let table = `
+            <table class="table table-hover gy-5 mt-5" id = "momo">
+                <div class="container mt-3 column col-md-6 col-lg-12 text-center">
+            <thead>
+                <th>รหัสกิจกรรม</th>
+                <th>ชื่อกิจกรรม</th>
+                <th>จำนวนชั่วโมง</th>
+                <th>ประเภท</th>
+                <th>จำนวนที่รับ</th>
+            </thead>
+                <tbody>`;
+
+
+            for (let i = 0; i < person.length; i++) {
+                table += `<tr>
+                        <td>${person[i].EventID}</td>
+                        <td>${person[i].EName}</td>
+                        <td>${person[i].hour}</td>
+                        <td>${person[i].typing}</td>
+                        <td>${person[i].people}</td>
+                        <br>
+                    </tr>`;
+            }
+            table += `   </tbody>
+            </table>
+            `;
+
+            demo.innerHTML = table;
+            // let button = document.getElementById("AddData");
+            // let button = document.createElement("button"); //สร้าง element <button></button>
+            // button.innerHTML = 'add'; // ใส่ข้อความใน button
+            function AddRow() { //กำหนดให้เรียกทำงาน เมื่อมีการกดปุ่ม add
+
+                let demo0 = document.createElement('tr'); //เนื่องจากโค้ดไม่ทำการขึ้นบรรทัดใหม่เมื่อทำการเรียก ใช้ ID momo เลยเพิ่มตัวแปรมาขึ้นบรรทัดใหม่ซ้ะเลย 
+                let demo1 = document.createElement('td'); //สร้างตัวแปรมาเก็บค่า โดย create ลักษณะตัวแปรที่จะเก็บเป็น td ()
+                let demo2 = document.createElement('td');
+                let demo3 = document.createElement('td');
+                let demo4 = document.createElement('td');
+                let demo5 = document.createElement('td');
+                let demo6 = document.createElement('td');
+                let IdValue = document.getElementById('EventID').value; //สร้างตัวแปรใหม่มาเก็บข้อมูลในส่วนของ input ที่มี id = "pid"
+                let NameValue = document.getElementById('EName').value;
+                let hourValue = document.getElementById('hour').value;
+                let typingValue = document.getElementById('typing').value;
+                let peopleValue = document.getElementById('people').value;
+
+                let IDnode = document.createTextNode(IdValue); //นำตัวแปรที่เก็บค่าเมื่อกี้มาสร้าง text และเก็บไว้ในตัวแปร Node 
+                let NameNode = document.createTextNode(NameValue);
+                let hournode = document.createTextNode(hourValue);
+                let typingnode = document.createTextNode(typingValue);
+                let peoplenode = document.createTextNode(peopleValue);
+
+                demo1.appendChild(IDnode);  //นำตัวข้อมูลที่เก็บค่า input ที่ทำการเอาค่าไปเก็บไว้ใน IDnode มาผนวกรวมกับ demo1 ที่ได้ทำการสร้างลักษณะของข้อมูลไว้ก่อนหน้านี้
+                demo2.appendChild(NameNode);
+                demo3.appendChild(hournode);
+                demo4.appendChild(typingnode);
+                demo5.appendChild(peoplenode);
+
+                document.getElementById('momo').appendChild(demo0);
+                document.getElementById('momo').appendChild(demo1); //ทำการเรียกใช้ Element ที่มี ID = "momo" มาผนวกกับตัว demo1 ที่มีการผนวกไปแล้วก่อนหน้า เพื่อให้ข้อมูลที่ input ไปแสดงในส่วนตาราง
+                document.getElementById('momo').appendChild(demo2);
+                document.getElementById('momo').appendChild(demo3);
+                document.getElementById('momo').appendChild(demo4);
+                document.getElementById('momo').appendChild(demo5);
+
+
+
+                let node = document.createElement('li'); //สร้าง li element 
+
+                document.getElementById('EventID').value = ''
+                document.getElementById('EName').value = ''
+                document.getElementById('hour').value = ''
+                document.getElementById('typing').value = ''
+                document.getElementById('people').value = ''
+            }
+            document.getElementsByTagName('body')[0].appendChild(button); //เอาปุ่มใส่เป็น element รูปใน body
+        </script>
+
+
+</body>
+
+</html>
