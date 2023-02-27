@@ -56,15 +56,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-3">
-                                    <label for="hour" class="form-label">จำนวนชั่วโมง</label>
-                                    <input type="number" class="form-control" id="hour" placeholder="" value=""
-                                        required="">
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
-                                </div>
-
                                 <div class="col-3">
                                     <label for="people" class="form-label">จำนวนที่รับ</label>
                                     <input type="number" class="form-control" id="people" maxLength="4">
@@ -73,16 +64,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12">
-                                    <label for="EName" class="form-label">ชื่อกิจกรรม</label>
-                                    <input type="text" class="form-control" id="EName" placeholder="กรุณากรอกชื่อกิจกรรม"
-                                        required="">
-                                    <div class="invalid-feedback">
-                                        Valid first name is required.
-                                    </div>
-                                </div>
-    
-    
                                 <div class="col-12">
                                     <label for="typing">ประเภทกิจกรรม</label>
                                     <select class="form-control form-control-lg form-select" name="typing" id="typing"
@@ -95,7 +76,51 @@
                                         Please provide a type.
                                     </div>
                                 </div>
+
+                                <div class="col-sm-12">
+                                    <label for="EPlace" class="form-label">สถานที่จัดกิจกรรม</label>
+                                    <input type="text" class="form-control" id="EPlace" placeholder="กรุณากรอกสถานที่จัดกิจกรรม"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <label for="EName" class="form-label">ชื่อกิจกรรม</label>
+                                    <input type="text" class="form-control" id="EName" placeholder="กรุณากรอกชื่อกิจกรรม"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
     
+                                <div class="col-sm-4">
+                                    <label for="dat" class="form-label">วันที่</label>
+                                    <input type="date" class="form-control" id="dat" 
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-4">
+                                    <label for="TimeStart" class="form-label">เวลาเริ่มกิจกรรม</label>
+                                    <input type="time" class="form-control" id="TimeStart" 
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-4">
+                                    <label for="IimeEnd" class="form-label">เวลาสิ้นสุดกิจกรรม</label>
+                                    <input type="time" class="form-control" id="IimeEnd" 
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
     
                                 <a class="w-100 btn btn-primary btn-lg" id="AddData" onclick="AddRow()">ยืนยัน</a>
                             </div>
